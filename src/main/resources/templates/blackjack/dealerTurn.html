@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<title>Blackjack</title>
+<h1>BlackJack!</h1>
+	<div>{{ #notEnoughResourcesToContinue }} <br>GAME OVER<br> {{ /notEnoughResourcesToContinue }}</div>
+<h2>Dealer Turn</h2>
+<head>
+<body>
+	<div>
+		Dealer Hand (<b>{{ dealerHandValue }}</b>) {{ #dealerWon }} DEALER
+		WON! {{ /dealerWon }} {{ #tie }} TIE! {{ /tie }} {{ #blackjackTie }}
+		Blackjack Tie! {{ /blackjackTie }} <br> {{ dealerHand }}
+	</div>
+	<hr>
+	<div>
+		Player Hand (<b>{{ playerHandValue }}</b>) {{ #playerWon }} PLAYER
+		WON! {{ /playerWon }} {{ #tie }} TIE! {{ /tie }} {{ #blackjackTie }}
+		Blackjack Tie! {{ /blackjackTie }} <br> {{ playerHand }}
+	</div>
+	<br>
+	<div>
+		Bet amount: {{ bet }} <br> Wallet balance: {{ wallet }} <br>
+		Remaining cards in deck: {{ deckSize }}
+	</div>
+	{{ #canShowPlayAnotherRoundButton }}
+	<br>
+	<div>
+		<form method="post" action="/blackjack/playAnotherRound">
+			<button>Play Another Round</button>
+		</form>
+	</div>
+	{{ /canShowPlayAnotherRoundButton }}	
+</body>
+</head>
+</html>

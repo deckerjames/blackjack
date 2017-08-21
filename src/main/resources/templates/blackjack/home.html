@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<title>Blackjack</title>
+<h1>BlackJack!</h1>
+<head>
+<body>
+	<div>Wallet: {{ wallet }}</div>
+	<form method="post" action="/blackjack/addCash">
+		<input name="cash" type="number" required>
+		<button>Add</button>
+	</form>
+	<form method="get" action="/blackjack/bet">
+		<button>Start</button>
+	</form>
+</body>
+</head>
+</html>

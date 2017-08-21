@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<title>Blackjack</title>
+<h1>BlackJack!</h1>
+<h2>Player Turn</h2>
+<head>
+<body>
+	<div>
+		Dealer Hand
+		<!-- (<b>{{ dealerHandValue }}</b>) -->
+		<br> {{ dealerHand }}
+	</div>
+	<hr>
+	<div>
+		Player Hand (<b>{{ playerHandValue }}</b>) <br> {{ playerHand }}
+	</div>
+	<br> {{ #canShowHitAndStandButtons }}
+	<div>
+		<form method="get" action="/blackjack/playerHit">
+			<button>Hit</button>
+		</form>
+		<form method="get" action="/blackjack/dealerTurn">
+			<button>Stand</button>
+		</form>
+	</div>
+	{{ /canShowHitAndStandButtons }}
+	<br>
+	<div>
+	{{ #noMoney }}
+		<br>GAME OVER - bet exceeded wallet balance<br>
+	{{ /noMoney }}
+	<br>
+	</div>
+	<div>
+		Bet amount: {{ bet }} <br> Wallet balance: {{ wallet }} <br>
+		Remaining cards in deck: {{ deckSize }}
+	</div>
+</body>
+</head>
+</html>
